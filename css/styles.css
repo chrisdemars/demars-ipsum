@@ -1,0 +1,26 @@
+/***** Base*****/
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+}
+
+.headshot {
+  background-color: lightcoral;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
