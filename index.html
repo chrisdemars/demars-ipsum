@@ -23,7 +23,7 @@
               <label for="numberOfParagraphs">
                 Number of paragraphs:
               </label>
-              <input type="text" />
+              <input type="text" id="paragraphs" />
               <div>
                 <label for="demarsSteez">DeMars Steez?</label>
                 <input type="checkbox" id="demarsSteez" name="demarsSteez" />
@@ -33,9 +33,11 @@
                 <input type="checkbox" id="lorem" name="lorem" />
               </div>
             </div>
-            <button class="generate-lipsum">Generate that shit!</button>
+            <button class="generate-lipsum" id="generate">
+              Generate that shit!
+            </button>
           </form>
-          <div class="lorem-paragraphs"></div>
+          <div class="lorem-paragraphs" id="lorem-paragraphs"></div>
         </div>
       </section>
     </div>
