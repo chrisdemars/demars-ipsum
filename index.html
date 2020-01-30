@@ -12,21 +12,27 @@
     <div class="grid-container">
       <section class="headshot">
         <div class="headshot-wrapper">
-          <img src="assets/headshot.png" alt="Chris DeMars headshot" />
+          <img src="assets/headshot-gradient.png" alt="Chris DeMars headshot" />
         </div>
       </section>
       <section class="generate-section">
         <div class="generate-wrapper">
           <h1>DeMars Ipsum</h1>
           <form action="">
-            <label for="numberOfParagraphs">
-              Number of paragraphs:
-            </label>
-            <input type="text" />
-            <label for="demarsSteez">DeMars Steez?</label>
-            <input type="checkbox" id="demarsSteez" name="demarsSteez" />
-            <label for="lorem">Lorem first?</label>
-            <input type="checkbox" id="lorem" name="lorem" />
+            <div class="ipsum-customize">
+              <label for="numberOfParagraphs">
+                Number of paragraphs:
+              </label>
+              <input type="text" />
+              <div>
+                <label for="demarsSteez">DeMars Steez?</label>
+                <input type="checkbox" id="demarsSteez" name="demarsSteez" />
+              </div>
+              <div>
+                <label for="lorem">Lorem first?</label>
+                <input type="checkbox" id="lorem" name="lorem" />
+              </div>
+            </div>
             <button class="generate-lipsum">Generate that shit!</button>
           </form>
           <div class="lorem-paragraphs"></div>
