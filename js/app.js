@@ -46,5 +46,3 @@ const clearThatShit = () => {
   paragraphs.value = '';
   lorem.checked = false;
 }
-
-console.log(words)
