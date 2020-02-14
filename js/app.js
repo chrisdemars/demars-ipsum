@@ -43,4 +43,6 @@ clearButton.addEventListener('click', (e) => {
 
 const clearThatShit = () => {
   boxOfIpsum.innerHTML = '';
+  paragraphs.value = '';
+  lorem.checked = false;
 }
