@@ -1,4 +1,4 @@
-export const words = [
+const words = [
   'yo',
   'what\'s good',
   'holla',
@@ -21,5 +21,12 @@ export const words = [
   'six-four',
   'ridin dirty',
   'hostility',
-  'stripper dope'
+  'stripper dope',
+  'chea',
+  'deez nutz',
+  'horror',
+  'rock that',
+  'split your wig',
+  'snappin\' bowls',
+  'bong rips'
 ];
