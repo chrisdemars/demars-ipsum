@@ -21,14 +21,15 @@
         <h1>DeMars Ipsum</h1>
         <form>
           <div class="ipsum-customize">
-            <label for="numberOfParagraphs">
-              Number of paragraphs:
-            </label>
-            <input type="text" id="paragraphs" />
-            <div class="lorem-checkbox-label">
+            <div class="input-group">
+              <label for="numberOfParagraphs">
+                Number of paragraphs:
+              </label>
+              <input class="num-paragraphs" type="number" id="paragraphs" value="2" min="1" />
+            </div>
+            <div class="input-group lorem-checkbox-label">
               <label for="lorem">Lorem first?</label>
-              <input type="checkbox" id="lorem" name="lorem" />
-              <span class="custom-checkbox">Lorem first?</span>
+              <input class="lorem-first" type="checkbox" id="lorem" name="lorem" />
             </div>
           </div>
           <button class="generate-ipsum" id="generate">
