@@ -45,7 +45,7 @@ const phrases = [
 
 const createSentence = (array) => {
   const sentence = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 7; ++i) {
     let randomWords = array[Math.floor(Math.random() * array.length)];
     sentence.push(randomWords);
   }
