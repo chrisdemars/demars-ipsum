@@ -63,7 +63,6 @@ const createParagraph = (array) => {
   return paragraphString.charAt(0).toUpperCase() + paragraphString.slice(1)
 }
 
-
 const createParagraphs = (numberOfParagraphs, startLorem) => {
   let paragraphs = [];
   for (let i = 0; i < numberOfParagraphs; ++i) {
