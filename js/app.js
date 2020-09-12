@@ -1,86 +1,89 @@
 const getParagraphs = () => {
-  const paragraphs = document.getElementById('paragraphs').value;
-  return paragraphs;
+  return document.getElementById('paragraphs').value;
 };
 
 const useLorem = () => {
-  const lorem = document.getElementById('lorem').checked;
-  return lorem;
+  return document.getElementById('lorem').checked;
 };
 
 const button = document.querySelector('#generate');
-
-button.addEventListener('click', (e) => {
-  e.preventDefault();
-  genThatShit();
-})
-
 const boxOfIpsum = document.querySelector('#lorem-paragraphs');
+const lorem = document.getElementById('lorem');
 
-const testSentence = (array) => {
-  // test that the parameter  is definitely an array 
-  const sentences = [];
-  for (i = 0; i < array.length; i++) {
-    let random = array[Math.floor(Math.random() * array.length)];
-    sentences.push(random);
-  };
+const phrases = [
+  'yo',
+  'what\'s good',
+  'holla',
+  'Detroit',
+  'Midwest the best',
+  '313',
+  'steezy',
+  'fo sho',
+  'dickies',
+  'vans',
+  'Dixxon flannels',
+  'pizza',
+  'rice beer',
+  'bud light',
+  'gluten free',
+  'smoke weed everyday',
+  'so fresh so clean',
+  'crib',
+  'banger',
+  'six-four',
+  'ridin dirty',
+  'hostility',
+  'stripper dope',
+  'chea',
+  'deez nutz',
+  'horror',
+  'rock that',
+  'split your wig',
+  'snappin\' bowls',
+  'bong rips'
+];
 
-  const firstWord = sentences.shift();
-  const letterArray = firstWord.split('');
-  const firstLetter = letterArray.shift().toUpperCase()
-  const newLetterArray = [firstLetter, ...letterArray];
-  const newFirstWord = [newLetterArray.join("")];
-  const newSentences = [newFirstWord, ...sentences];
-  return newSentences.join(" ");
+const createSentence = (array) => {
+  const sentence = [];
+  for (let i = 0; i < 7; i++) {
+    let randomWords = array[Math.floor(Math.random() * array.length)];
+    sentence.push(randomWords);
+  }
+  return sentence.join(", ") + "."
+}
 
+const createParagraph = (array) => {
+  const paragraph = [];
+
+  for (let i = 0; i < 4; ++i ){
+    paragraph.push(createSentence(array))
+  }
+
+  const paragraphString = paragraph.join(" ")
+  return paragraphString.charAt(0).toUpperCase() + paragraphString.slice(1)
+}
+
+
+const createParagraphs = (numberOfParagraphs, startLorem) => {
+  let paragraphs = [];
+  for (let i = 0; i < numberOfParagraphs; ++i) {
+    paragraphs.push(createParagraph(phrases))
+  }
+  if (startLorem) paragraphs[0] = `Lorem ipsum dolor sit amet, ${paragraphs[0]}`
+  return paragraphs.join("<br /><br />")
 }
 
 const genThatShit = () => {
   const numParagraphs = getParagraphs();
   const startLorem = useLorem();
-  // let newString = seed.repeat(numParagraphs);
+  boxOfIpsum.innerHTML = createParagraphs(numParagraphs, startLorem)
 
-
-  let words = [
-    'yo',
-    'what\'s good',
-    'holla',
-    'Detroit',
-    'Midwest the best',
-    '313',
-    'steezy',
-    'fo sho',
-    'dickies',
-    'vans',
-    'Dixxon flannels',
-    'pizza',
-    'rice beer',
-    'bud light',
-    'gluten free',
-    'smoke weed everyday',
-    'so fresh so clean',
-    'crib',
-    'banger',
-    'six-four',
-    'ridin dirty',
-    'hostility',
-    'stripper dope',
-    'chea',
-    'deez nutz',
-    'horror',
-    'rock that',
-    'split your wig',
-    'snappin\' bowls',
-    'bong rips'
-  ];
-
-  if (startLorem) {
-    boxOfIpsum.innerHTML = testSentence(["Lorem", ...words])  
-  } else {
-    boxOfIpsum.innerHTML = testSentence(words);
-  }
-  
 };
+
+button.addEventListener('click', (e) => {
+  e.preventDefault();
+  genThatShit();
+})
 
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click', (e) => {
@@ -92,9 +95,3 @@ const clearThatShit = () => {
   boxOfIpsum.innerHTML = '';
   lorem.checked = false;
 }
-
-
-// Click button
-  // generate random sentence from words in array
-  // start first sentence with a capital letter
-  // end sentence with a period 
