@@ -54,11 +54,9 @@ const createSentence = (array) => {
 
 const createParagraph = (array) => {
   const paragraph = [];
-
   for (let i = 0; i < 4; ++i ){
     paragraph.push(createSentence(array))
   }
-
   const paragraphString = paragraph.join(" ")
   return paragraphString.charAt(0).toUpperCase() + paragraphString.slice(1)
 }
@@ -76,7 +74,6 @@ const genThatShit = () => {
   const numParagraphs = getParagraphs();
   const startLorem = useLorem();
   boxOfIpsum.innerHTML = createParagraphs(numParagraphs, startLorem)
-
 };
 
 button.addEventListener('click', (e) => {
