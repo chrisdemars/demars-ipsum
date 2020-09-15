@@ -67,7 +67,7 @@ const createParagraphs = (numberOfParagraphs, startLorem) => {
     paragraphs.push(createParagraph(phrases));
   }
   if (startLorem)
-    paragraphs[0] = `Lorem ipsum dolor sit amet, ${paragraphs[0]}`;
+    paragraphs[0] = `Lorem ipsum dolor sit amet ${paragraphs[0]}`;
   return paragraphs.join("<br /><br />");
 };
 
