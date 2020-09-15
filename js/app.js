@@ -49,7 +49,7 @@ const createSentence = (array) => {
     let randomWords = array[Math.floor(Math.random() * array.length)];
     sentence.push(randomWords);
   }
-  return sentence.join(", ") + ".";
+  return sentence.join(" ") + ".";
 };
 
 const createParagraph = (array) => {
