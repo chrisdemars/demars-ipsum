@@ -49,7 +49,7 @@ const createSentence = (array) => {
     let randomWords = array[Math.floor(Math.random() * array.length)];
     sentence.push(randomWords);
   }
-  return sentence.join(", ") + ".";
+  return sentence.join(" ") + ".";
 };
 
 const createParagraph = (array) => {
@@ -67,7 +67,7 @@ const createParagraphs = (numberOfParagraphs, startLorem) => {
     paragraphs.push(createParagraph(phrases));
   }
   if (startLorem)
-    paragraphs[0] = `Lorem ipsum dolor sit amet, ${paragraphs[0]}`;
+    paragraphs[0] = `Lorem ipsum dolor sit amet ${paragraphs[0]}`;
   return paragraphs.join("<br /><br />");
 };
 
